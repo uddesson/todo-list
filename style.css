@@ -1,0 +1,40 @@
+body{
+background-color: #5C97BF;
+}
+
+h1, a, p, li{
+font-family: sans-serif, "Helvetica Neue";
+text-align: center;
+text-decoration: none;
+letter-spacing: 4px;
+color: #fff;
+}
+
+h1{
+font-size: 2.5em;
+}
+
+li{
+list-style: none;
+text-align: center;
+color: #fff;
+margin: 20px;
+}
+
+ul{
+padding: 0px;
+}
+
+li .fa{
+font-size: 2.5em;
+}
+
+
+header{
+margin-top: 80px;
+}
+
+
+footer{
+margin: 60px;
+}
