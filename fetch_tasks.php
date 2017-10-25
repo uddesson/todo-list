@@ -1,12 +1,11 @@
 <?php
-include 'database.php';
+require 'database.php';
 
-//testar
-$statement = $pdo->prepare
+$fetch_tasks = $pdo->prepare
     (
-        "SELECT title, createdBy FROM todos"
+        "SELECT title, createdBy, id FROM todos
+        ORDER by id DESC"
     );
 
-$statement->execute();
-
-$tasks = $statement->fetchAll();
+$fetch_tasks->execute();
+$tasks = $fetch_tasks->fetchAll(PDO::FETCH_ASSOC);

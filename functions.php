@@ -25,11 +25,9 @@ function submit_task($pdo)
         
     if(isset($_POST["submit_task"]))
     {    
-        $save_task = $pdo->prepare
-            (
-                "INSERT INTO todos (title, createdBy) 
-                VALUES (:title, :createdBy)"
-            );
+        $save_task = $pdo->prepare(
+            "INSERT INTO todos (title, createdBy) 
+            VALUES (:title, :createdBy)");
 
         $save_task->execute(array(
             ":title"     => $_POST["task_title"],
