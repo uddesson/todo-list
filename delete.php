@@ -1,16 +1,10 @@
 <?php
-require_once 'database.php';
-require_once 'fetch_tasks.php';
-
+require 'database.php';
 
 if (isset($_POST["delete_id"]))
-{
-    $delete_task = $pdo->prepare
-        (
-            "DELETE FROM todos WHERE id = :id"
-        );
-    $delete_task->execute( array (":id"   => $_POST["delete_id"])); 
-    
-}
+    {
+        $delete_stm = $pdo->prepare("DELETE FROM todos WHERE id = {$_POST["delete_id"]}");
+        $delete_stm->execute();   
+    }
 
 header('Location: index.php');

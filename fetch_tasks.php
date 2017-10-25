@@ -3,7 +3,7 @@ require 'database.php';
 
 $fetch_tasks = $pdo->prepare
     (
-        "SELECT title, createdBy, id FROM todos
+        "SELECT title, createdBy, completed, id FROM todos
         ORDER by id DESC"
     );
 

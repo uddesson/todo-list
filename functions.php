@@ -1,5 +1,6 @@
 <?php
 require 'database.php';
+require 'fetch_tasks.php';
 
 
 function check_if_task_is_entered()
@@ -9,7 +10,6 @@ function check_if_task_is_entered()
         if (empty($_POST["task_title"]) || empty($_POST["added_by"]))
         {
             echo '<p>' . "You didn't add the task correctly!" . '</p>';
-            exit();
         } 
         
         elseif (isset($_POST["task_title"]) && isset($_POST["added_by"]))
@@ -35,7 +35,3 @@ function submit_task($pdo)
         ));
     }
 }
-
-
-
-
