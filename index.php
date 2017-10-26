@@ -4,22 +4,17 @@
 
 <body>
 <main> 
-   
-   
     <div class="input_task_container">
+           
             
             <form action="index.php" method="POST">
-               
                 <h2>Enter new task:</h2>  
-                
                 <input type="text" name="task_title" placeholder="Ex. Return books to library" required><br></br>
-                
                 <input type="text" name="added_by" placeholder="Added by" required><br></br>
-                
                 <input id="submit_task" type="submit" name="submit_task" value="Add task">
                 
-               <?php check_if_task_is_entered();
-                submit_task($pdo); ?>
+               <?php check_if_task_is_entered();?>
+               <?php submit_task($pdo); ?>
                 
             </form>   
             
@@ -83,7 +78,8 @@
     
                 if ($task["completed"] == 1): ?>
                     <div class="single_task_box">
-                     <?php echo '<p>' . $task["title"] . '</p>' 
+                     <?php 
+                        echo '<p id="completedtask_title">' . $task["title"] . '</p>' 
                                  . '</br>' . '<p id="createdby_text">' . 'By: ' . $task["createdBy"] . '</p>';
                             ?>
                      <form action="delete.php" method="POST">
@@ -104,8 +100,8 @@
         
         <footer>           
             <ul>
-                <li><a href="https://github.com/uddesson/todo-list">github.com/uddesson/todo-list</a></li>
-                <li><a href="https://github.com/uddesson">@uddesson</a></li>
+                <li><a href="https://github.com/uddesson/todo-list">A SIMPLE TO DO-LIST</a></li>
+                <li><a href="https://github.com/uddesson">@UDDESSON</a></li>
                 <li><i class="fa fa-github" aria-hidden="true"></i></li>
             </ul>
         </footer>
