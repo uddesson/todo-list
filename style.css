@@ -27,19 +27,17 @@ letter-spacing: 3px;
 }
 
 h2{
-font-family: 'Comfortaa', cursive;
 font-size: 1.5em;
 color: lightcoral;
 }
-
 
 header{
 margin-top: 80px;
 }
 
 
-
 /* ---------------------------- CONTAINERS ------------------------------*/
+
 
 .all_tasks_container{
 margin: 0px;
