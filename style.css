@@ -1,8 +1,10 @@
 body{
-background-color: #5C97BF;
+background-color: #e7e7e7;
 margin: 0px;
 padding: 0px;
 }
+
+/* ----------------------- GENERAL TEXT STYLING ------------------------*/
 
 a, p, li{
 font-family: 'Roboto', sans-serif; 
@@ -16,17 +18,18 @@ padding: 0px;
 }
 
 h1, h2{
-font-family: 'Fredoka One', cursive;
+font-family: 'Comfortaa', cursive;
 text-align: center;
-font-size: 2.2em;
+font-size: 2.6em;
 margin: 10px;
-color: #fff;
+color: #616161;
 letter-spacing: 3px;
 }
 
 h2{
-font-family: 'Roboto', sans-serif; 
-font-size: 1.9em;
+font-family: 'Comfortaa', cursive;
+font-size: 1.5em;
+color: lightcoral;
 }
 
 
@@ -36,7 +39,7 @@ margin-top: 80px;
 
 
 
-/* ------------------------- CONTAINER STYLING ---------------------------*/
+/* ---------------------------- CONTAINERS ------------------------------*/
 
 .all_tasks_container{
 margin: 0px;
@@ -45,20 +48,24 @@ margin: 0px;
 .input_task_container{
 width: 90vw;
 height: 300px;
-background-color: skyblue;
-margin: 30px auto;
-padding-top: 20px;
+background-color: #fff;
+margin: 40px auto;
+padding-top: 30px;
 padding-bottom: 50px;
 text-align: center;
 border-radius: 15px;
 }
 
+#error_message_text{
+color: lightcoral;
+}
+
 
 .current_tasks_container{
 width: 90vw;
-background-color: lightcoral;
+background-color: #fff;
 margin: 20px auto;
-padding-top: 20px;
+padding-top: 30px;
 padding-bottom: 50px;
 text-align: center;
 border-radius: 15px;
@@ -67,9 +74,9 @@ border-radius: 15px;
 
 .completed_tasks_container{
 width: 90vw;
-background-color: lightgreen;
+background-color: #fff;
 margin: 20px auto;
-padding-top: 20px;
+padding-top: 30px;
 padding-bottom: 50px;
 text-align: center;
 border-radius: 15px;
@@ -79,22 +86,27 @@ border-radius: 15px;
 width: 60vw;
 padding: 10px;
 margin: 15px;
-background-color: #fff;
-border-radius: 15px;
 box-sizing: border-box;
 display: inline-block;
 }
 
+hr{
+border: 0;
+width: 40vw;
+border-bottom: 2px dashed lightgrey;
+
+}
+
 .single_task_box>p{
 font-size: 1em;
-margin-top: 10px;
+margin-top: 15px;
 font-weight: 200;
 font-style: normal;
 color: grey;
 }
 
 #createdby_text{
-margin-top: -5px;
+margin-top: -15px;
 margin-bottom: 10px;
 font-size: 0.9em;
 color: lightgrey;
@@ -102,6 +114,7 @@ font-style: italic;
 }
 
 #completedtask_title{
+color: lightgrey;
 text-decoration: line-through;
 font-style: italic;
 }
@@ -113,14 +126,15 @@ justify-content: center;
 }
 
 
-/* ----------------------- INPUT FIELDS STYLING ---------------------------*/
+/* ----------------------- INPUT FIELDS ---------------------------*/
 
 
 input[type=text]{
 width: 70vw;
 padding: 16px;
+background-color: #ededed;
 margin-top: 10px;
-border: 1px solid #fff;
+border: 1px solid #e2e2e2;
 border-radius: 10px;
 box-sizing: border-box;
 display: inline-block;
@@ -128,6 +142,7 @@ display: inline-block;
 
 input[type=text], p{
 font-size: 0.9em;
+letter-spacing: 1px;
 font-style: italic;
 }
 
@@ -135,23 +150,29 @@ font-style: italic;
 input[type=submit]{    
 background-color: lightcoral;
 border: 1px solid lightcoral;
-padding: 16px;
-width: 100px;
+padding: 18px;
 margin-top: 10px;
-margin-bottom: 20px;
+margin-bottom: 25px;
 border-radius: 10px;
 box-sizing: border-box;
 display: inline-block;
 }
 
+input[type=submit]:hover{
+background-color: #6cc3b6;
+border: 1px solid #6cc3b6;
+}
+
 input[type=submit], p{
 font-size: 0.9em;
 color: #fff;
+text-align: center;
+letter-spacing: 1px;
 
 }
 
 input[id=complete_task]{
-background-color: seagreen;
+background-color: #6cc3b6;
 padding: 10px;
 margin: 10px;
 border-radius: 10px;
@@ -160,7 +181,7 @@ display: inline-block;
 }
 
 input[id=delete_task]{
-background-color: indianred;
+background-color: #d95f63;
 padding: 10px;
 margin: 10px;
 border-radius: 10px;
@@ -180,16 +201,15 @@ display: inline-block;
 
 
 
-/* -------------------------- FOOTER STYLING ---------------------------*/
+/* ---------------------------- FOOTER ------------------------------*/
 
 
 footer{
-background-color: #2b678b;
+background-color: #616161;
 padding-top: 35px;
 margin-top: 80px;
 padding-bottom: 15px;
 }
-
 
 footer, a{
 font-size: 0.9em;
@@ -197,11 +217,10 @@ letter-spacing: 6px;
 }
 
 a:hover{
-color: lightblue;
+color: #6cc3b6;
 font-size: 0.9em;
 letter-spacing: 6px;
 }
-
 
 li{
 list-style: none;
@@ -220,19 +239,25 @@ font-size: 2.5em;
 
 
 
-@media screen and (min-width: 700px){
+/* ----------- TABLET and DEKSTOP VERSION ----------- */
 
+
+@media screen and (min-width: 900px)
+{
 .input_task_container{
 flex: 1;
 margin: 65px auto;
+}
+    
+hr{
+width: 20vw;
 }
 
 .all_tasks_container{
 display: flex;
 flex-direction: row;
 }
-    
-    
+
 .current_tasks_container{
 flex: 2;
 margin-left: 65px;
@@ -244,10 +269,9 @@ margin-right: 30px;
 flex: 2;
 margin-right: 65px;
 margin-left: 30px;
-}
-
-    
+}    
 
 .single_task_box{
 width: 35vw;
 }
+} 
