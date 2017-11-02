@@ -9,7 +9,7 @@ padding: 0px;
 
 
 a, p, li{
-font-family: 'Roboto', sans-serif; 
+font-family: 'Roboto', sans-serif;
 text-align: center;
 text-decoration: none;
 color: #fff;
@@ -152,7 +152,7 @@ letter-spacing: 1px;
 font-style: italic;
 }
 
-input[type=submit]{    
+input[type=submit]{
 background-color: lightcoral;
 border: 1px solid lightcoral;
 padding: 18px;
@@ -197,6 +197,17 @@ display: inline-block;
 }
 
 input[id=delete_completed_task]{
+background-color: lightgray;
+padding: 10px;
+margin: 10px;
+border-radius: 10px;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+display: inline-block;
+}
+
+
+input[id=undo_completed_task]{
 background-color: lightgray;
 padding: 10px;
 margin: 10px;
@@ -255,7 +266,7 @@ font-size: 2.5em;
         flex: 1;
 margin: 65px auto;
 }
-    
+
 hr{
 width: 20vw;
 }
@@ -269,7 +280,7 @@ display: flex;
     -ms-flex-direction: row;
         flex-direction: row;
 }
-    
+
 .current_tasks_container{
 -webkit-box-flex: 2;
     -ms-flex: 2;
@@ -284,10 +295,10 @@ margin-right: 30px;
         flex: 2;
 margin-right: 65px;
 margin-left: 30px;
-}    
+}
 
 .single_task_box{
 width: 35vw;
 }
-    
-} 
+
+}
