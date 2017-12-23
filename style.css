@@ -63,20 +63,23 @@ color: lightcoral;
 
 .current_tasks_container{
 width: 90vw;
-background-color: #fff;
+align-content: flex-start;
 margin: 20px auto;
-padding-top: 30px;
-padding-bottom: 50px;
 text-align: center;
+}
+
+.background_for_container{
+background-color: #fff;
+padding: 30px 0 50px 0;
+margin: 20px auto;
 border-radius: 15px;
 }
 
 .completed_tasks_container{
 width: 90vw;
-background-color: #fff;
+margin: auto;
+align-content: flex-start;
 margin: 20px auto;
-padding-top: 30px;
-padding-bottom: 50px;
 text-align: center;
 border-radius: 15px;
 }

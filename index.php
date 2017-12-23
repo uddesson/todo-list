@@ -19,13 +19,14 @@
 
 
     <div class="all_tasks_container">
-            <div class="current_tasks_container">
+        <div class="current_tasks_container">
+            <div class="background_for_container">
                 <h2>Current tasks:</h2>
 
                 <?php
                 //Imports and displays tasks from database
                 require 'fetch_tasks.php';
-
+                
                 //Loop for displaying each current (unfinished) task
                 foreach($tasks as $task):
 
@@ -55,36 +56,40 @@
 
                 <?php endif; ?>
                 <?php endforeach; ?>
-            </div> <!--Closing CURRENT task-container-->
+
+            </div> <!-- Closing background_for_container -->
+         </div> <!--Closing CURRENT task-container-->
 
             <div class="completed_tasks_container">
-                <h2>Completed tasks:</h2>
-                <?php foreach($tasks as $task): ?>
-                <?php if ($task["completed"] == 1): ?>
+                <div class="background_for_container">
+                    <h2>Completed tasks:</h2>
+                    <?php foreach($tasks as $task): ?>
+                    <?php if ($task["completed"] == 1): ?>
 
-                    <div class="single_task_box">
-                        <?php echo '<p id="completedtask_title">' . $task["title"] . '</p>'
-                                 . '</br>' . '<p id="createdby_text">' . 'By: ' . $task["createdBy"] . '</p>'; ?>
+                        <div class="single_task_box">
+                            <?php echo '<p id="completedtask_title">' . $task["title"] . '</p>'
+                                    . '</br>' . '<p id="createdby_text">' . 'By: ' . $task["createdBy"] . '</p>'; ?>
 
-                      <!--Repeating delete action so user can remove completed tasks-->
-                      <div class="actions_box">
-                          <form action="delete.php" method="POST">
-                              <input type="hidden" name="delete_id" value="<?= $task["id"]; ?>">
-                              <input type="image" id="delete_completed_task" src="images/trashcan.png" width="40" height="40" alt="Delete icon">
-                          </form>
+                        <!--Repeating delete action so user can remove completed tasks-->
+                        <div class="actions_box">
+                            <form action="delete.php" method="POST">
+                                <input type="hidden" name="delete_id" value="<?= $task["id"]; ?>">
+                                <input type="image" id="delete_completed_task" src="images/trashcan.png" width="40" height="40" alt="Delete icon">
+                            </form>
 
-                          <!--Sets completed task to uncomplete again-->
-                          <form action="undo_complete.php" method="POST">
-                              <input type="hidden" name="complete_id" value="<?= $task["id"]; ?>">
-                              <input type="image" id="undo_completed_task" src="images/undo_icon.png" width="40" height="40" alt="Undo task icon">
-                          </form>
-                      </div>
-                    </div> <!--Closing SINGLE TASK-box-->
-                    <hr>
+                            <!--Sets completed task to uncomplete again-->
+                            <form action="undo_complete.php" method="POST">
+                                <input type="hidden" name="complete_id" value="<?= $task["id"]; ?>">
+                                <input type="image" id="undo_completed_task" src="images/undo_icon.png" width="40" height="40" alt="Undo task icon">
+                            </form>
+                        </div>
+                        </div> <!--Closing SINGLE TASK-box-->
+                        <hr>
 
-                <?php endif; ?>
-                <?php endforeach; ?>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
 
+                </div> <!-- Closing background_for_container -->
             </div> <!--Closing COMPLETED tasks-container-->
         </div> <!--Closing ALL TASKS-container-->
 
